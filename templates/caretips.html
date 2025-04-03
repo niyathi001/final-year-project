@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Care Tips</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f9f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content h3 {
+            margin-top: 0;
+            color: #388e3c;
+        }
+        .card-content p {
+            font-size: 15px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🌱 Plant Care Tips</h1>
+    <p>Learn how to care for your plants and help them thrive</p>
+</header>
+
+<div class="container">
+    
+    <!-- Brahmi -->
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/brahmi.jpg') }}" alt="Brahmi Plant">
+        <div class="card-content">
+            <h3>Brahmi</h3>
+            <p>Brahmi is a medicinal herb known for enhancing memory and reducing stress. It thrives in moist, warm environments. Keep the soil consistently damp but not waterlogged, and place it in partial sunlight. Regular pruning encourages bushy growth and prevents legginess.</p>
+        </div>
+    </div>
+
+    <!-- Haworthia -->
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/haworthia.jpg') }}" alt="Haworthia Plant">
+        <div class="card-content">
+            <h3>Haworthia</h3>
+            <p>Haworthia is a small, hardy succulent ideal for indoor spaces. It prefers bright, indirect sunlight and well-draining soil. Water sparingly—only when the soil is completely dry. Avoid overwatering, as it can lead to root rot. Minimal care makes it great for beginners.</p>
+        </div>
+    </div>
+
+    <!-- Jade -->
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/jade.jpg') }}" alt="Jade Plant">
+        <div class="card-content">
+            <h3>Jade</h3>
+            <p>The Jade plant is a symbol of good luck and prosperity. It loves bright light and can even tolerate some direct sunlight. Water deeply but infrequently, allowing the soil to dry out between watering. Prune to maintain shape and encourage branching.</p>
+        </div>
+    </div>
+
+    <!-- Bird of Paradise -->
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/birdofparadise.jpg') }}" alt="Bird of Paradise">
+        <div class="card-content">
+            <h3>Bird of Paradise</h3>
+            <p>This striking tropical plant loves bright, direct sunlight and regular watering. Keep the soil moist during the growing season and reduce watering in winter. Its large leaves benefit from occasional misting to boost humidity. Fertilize monthly in spring and summer.</p>
+        </div>
+    </div>
+
+    <!-- Golden Thuja -->
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/goldenthuja.jpg') }}" alt="Golden Thuja">
+        <div class="card-content">
+            <h3>Golden Thuja</h3>
+            <p>Golden Thuja is a conifer with beautiful yellow foliage. It thrives in full sun and requires well-drained soil. Water regularly when young, but once established, it becomes drought-tolerant. Ideal for hedging and ornamental landscaping, prune it lightly to shape.</p>
+        </div>
+    </div>
+
+    <!-- Verbena -->
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/verbena.jpg') }}" alt="Verbena">
+        <div class="card-content">
+            <h3>Verbena</h3>
+            <p>Verbena is a colorful flowering plant that thrives in full sun. It requires moderately fertile soil and consistent watering. Deadhead spent blooms to promote continuous flowering. Ideal for hanging baskets, borders, and attracting pollinators like butterflies and bees.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

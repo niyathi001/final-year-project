@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About – Nature’s Basket</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="brand">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nature's Basket">
+                    Nature's Basket
+                </li>
+            </ul>
+            <div class="buttons">
+                <a href="{{ url_for('view_plants') }}"><button id="back-btn">GO BACK</button></a>
+            </div>
+        </nav>
+    </header>
+
+  <div class="about-container">
+    <h1>🌿 About Nature’s Basket</h1>
+    <p><strong>Nature’s Basket</strong> is a simple yet powerful web-based platform designed to make plant ownership easier and more enjoyable. It helps users explore a wide variety of plants, purchase them online, and get proper care instructions to keep them healthy.</p>
+
+    <h2>🌱 Our Vision</h2>
+    <p>To promote a greener environment by making plant care and inventory management accessible to everyone — from beginners to plant enthusiasts.</p>
+
+    <h2>💡 Key Features</h2>
+    <ul>
+      <li>🪴 <strong>Online Plant Store</strong> – Browse and buy from a wide collection of indoor and outdoor plants.</li>
+      <li>📦 <strong>Inventory Management</strong> – Keeps track of available plants and their details like category, price, and quantity.</li>
+      <li>📋 <strong>Customer Registration & Login</strong> – Secure and simple user authentication system.</li>
+      <li>🧼 <strong>Care Instructions</strong> – Offers tailored care tips for each plant.</li>
+      <li>📸 <strong>Mini Blog & Updates</strong> – Users can share their plant care experiences and stories.</li>
+    </ul>
+
+    <h2>🛠 Technologies Used</h2>
+    <ul>
+      <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+      <li><strong>Backend:</strong> Python with Flask Framework</li>
+      <li><strong>Database:</strong> MySQL</li>
+      <li><strong>Tools:</strong> VS Code, MySQL</li>
+    </ul>
+
+    <h2>👩‍💻 Developer Note</h2>
+    <p>This project was developed as part of a final-year BCA project to demonstrate real-world application design using web technologies and databases. It combines creative UI with a functional backend system.</p>
+  </div>
+</body>
+
+<style>
+nav{
+    font-family: 'Ubuntu',sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px;
+    height: 65px;
+    background-color: rgb(34, 134, 34);
+    color: antiquewhite;
+
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li{
+    padding: 0 12px;
+}
+
+.brand img{
+    width: 70px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-left: -30px;
+    margin-top: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons a {
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+
+#back-btn{
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none; /* Removes underline */
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+#back-btn:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+    .about-container {
+      background: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1, h2 {
+      color: #2d572c;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin: 15px 0 30px 20px;
+      line-height: 1.7;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .about-container {
+        padding: 20px;
+        margin: 20px;
+      }
+    }
+  </style>
+
+
+</html>

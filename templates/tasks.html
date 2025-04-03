@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Plant Tasks - Nature’s Basket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        nav{
+    font-family: 'Ubuntu',sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px;
+    height: 65px;
+    background-color: rgb(34, 134, 34);
+    color: antiquewhite;
+
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li{
+    padding: 0 12px;
+}
+
+.brand img{
+    width: 70px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-left: -30px;
+    margin-top: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons a {
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+
+#back-btn{
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none; /* Removes underline */
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+#back-btn:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+        h2 {
+            text-align: center;
+            color: #2a7a2e;
+            margin-top: 20px;
+        }
+
+        .task-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .task-card {
+            background-color: #f1ffe8;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .task-card h3 {
+            margin-bottom: 10px;
+            color: #2a7a2e;
+        }
+
+        .no-tasks {
+            text-align: center;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li class="brand">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nature's Basket">
+                    Nature's Basket
+                </li>
+            </ul>
+            <div class="buttons">
+                <a href="{{ url_for('view_plants') }}"><button id="back-btn">GO BACK</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <h2>🌱 Your Scheduled Plant Care Tasks</h2>
+
+    {% if tasks %}
+    <div class="task-container">
+        {% for task in tasks %}
+        <div class="task-card">
+            <h3>{{ task[0] }} – {{ task[1] }}</h3>
+            <p><strong>Date:</strong> {{ task[2] }}</p>
+            <p>{{ task[3] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="no-tasks">No tasks scheduled yet.</p>
+    {% endif %}
+
+</body>
+</html>

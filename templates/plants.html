@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Plants - Nature’s Basket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="brand">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nature's Basket">
+                    Nature's Basket
+                </li>
+                <li><a href="{{ url_for('plantsabout') }}"><button class="nav-btn">ABOUT</button></a></li>
+                <li><a href="{{ url_for('my_services') }}"><button class="nav-btn">SERVICES</button></a></li>
+                <li><a href="{{ url_for('blog_page') }}"><button class="nav-btn">COMMUNITY</button></a></li>
+                <li><a href="{{ url_for('view_tasks') }}"><button class="nav-btn">VIEW SCHEDULED TASKS</button></a></li>
+
+
+            </ul>
+            <div class="buttons">
+                <a href="{{ url_for('order_history') }}"><button id="historyBtn">ORDER HISTORY</button></a>
+                <a href="{{ url_for('logout') }}"><button id="logout-btn">LOGOUT</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="section-title">Available Plants</h1>
+    <div class="plant-container">
+        {% for plant in plants %}
+        <form action="{{ url_for('payment') }}" method="POST">
+            <input type="hidden" name="plant_id" value="{{ plant[0] }}">
+            <button type="submit" class="plant-card-button">
+                <div class="plant-card">
+                    <img src="{{ url_for('static', filename='images/' + plant[6]) }}" alt="{{ plant[1] }}" class="plant-image">
+                    <h3>{{ plant[1] }}</h3>
+                    <p><strong>Category:</strong> {{ plant[2] }}</p>
+                    <p><strong>Price:</strong> ₹{{ plant[3] }}</p>
+                    <p>{{ plant[5] }}</p>
+                    <p><strong>In Stock:</strong> {{ plant[4] }}</p>
+                </div>
+            </button>
+        </form>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
+body{
+    background-color: antiquewhite;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents sideways scroll */
+}
+
+
+
+nav{
+    font-family: 'Ubuntu',sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px;
+    height: 65px;
+    background-color: rgb(34, 134, 34);
+    color: antiquewhite;
+
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li{
+    padding: 0 12px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: antiquewhite;
+    font-size: 16px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.brand img{
+    width: 70px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-left: -30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons a {
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#historyBtn {
+    background: none;
+    border: none;
+    color: antiquewhite;
+    font-size: 16px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s ease;
+    margin-top: 5px;
+    
+}
+
+#historyBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+#logout-btn{
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none; /* Removes underline */
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+#logout-btn:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2f2f2f;
+}
+
+.plant-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.plant-card-button {
+    all: unset;
+    cursor: pointer;
+}
+
+.plant-card {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px;
+    width: 250px;
+    height: 350px; /* Fixed height for all cards */
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.plant-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.plant-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+</style>

@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
+body{
+    background-color: antiquewhite;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents sideways scroll */
+}
+
+
+
+nav{
+    font-family: 'Ubuntu',sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px;
+    height: 65px;
+    background-color: rgb(34, 134, 34);
+    color: antiquewhite;
+
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li{
+    padding: 0 12px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: antiquewhite;
+    font-size: 16px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.brand img{
+    width: 70px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-left: -30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons a {
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#loginBtn {
+    background: none;
+    border: none;
+    color: antiquewhite;
+    font-size: 16px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s ease;
+    margin-top: 5px;
+    
+}
+
+#loginBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+#register-btn{
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none; /* Removes underline */
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+#register-btn:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 5%;
+}
+
+.top-text {
+    max-width: 50%;
+}
+
+.top-text h1 {
+    font-size: 57px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.top-text p {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #555;
+}
+
+.top-image img {
+    max-width: 900px;
+    max-height: 800px;
+    object-fit: cover;
+    object-position: 75% center;
+}
+
+.join-btn {
+    display: inline-block;
+    background: rgb(34, 134, 34);
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    transition: 0.3s ease;
+    margin-top: 15px;
+}
+
+.join-btn:hover {
+    background: #1a6d1a;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 10%; 
+    margin: 0 auto; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px; 
+    margin-top: -30px;
+
+}
+
+.features h2 {
+    font-size: 57px;
+    font-weight: bold;
+    max-width: 700px; 
+    margin-bottom: 20px; 
+}
+
+.features p {
+    font-size: 22px;
+    color: #555;
+    max-width: clamp(500px, 50%, 600px); 
+    line-height: 1.5;
+    text-align: center;
+}
+
+.feature-container {
+    display: flex;
+    width: 100vw; 
+    padding: 30px 0;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+.feature-card {
+    background: white;
+    border: none; /* Makes it a button */
+    cursor: pointer; /* Ensures it looks clickable */
+    padding: 30px;
+    flex: 1; 
+    max-width: 100%;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+    font-size: 40px;
+    color: rgb(34, 134, 34);
+    margin-bottom: 10px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.middle-image {
+    width: 100%;
+    margin-top: -40px; /* Moves the image upward */
+    overflow: hidden;
+}
+
+.middle-image img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+}
+
+.footer {
+    width: 100%; 
+    background-color: antiquewhite;
+    color: black;
+    padding: 40px 0 20px;
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden; 
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+
+.footer-logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between logo and title */
+}
+
+.footer-logo {
+    width: 63px;  /* adjust size as needed */
+    height: auto;
+
+}
+
+
+.footer-left h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.footer-left p {
+    font-size: 19px;
+    color: #555;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.footer-links ul li {
+    margin-bottom: 19px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 19px;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact p {
+    font-size: 19px;
+    margin-bottom: 19px;
+    color: #555;
+
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: black;
+    font-size: 25px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: black;
+}
+
+.footer-bottom {
+    width: 100%;
+    padding-top: 15px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 19px;
+    color: black;
+}
+
+.footer-divider {
+    position: relative;
+    left: 0;
+    width: 100%; /* Full viewport width */
+    height: 1px;
+    background-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bottompart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 10%; 
+    margin: 0 auto; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px; 
+    margin-top:20px;
+  }
+  
+  .bottompart h2 {
+    font-size: 57px;
+    font-weight: bold;
+    max-width: 700px; 
+    margin-bottom: 10px;
+  }
+  
+  .bottompart p {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+  
+  .bottompart-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 90px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+  
+  .bottompart-buttons button {
+    min-width: 180px;           /* Prevent shrinking too small on small screens */
+    padding: 25px 45px;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    background-color: #f9f9f9;
+    font-weight: 600;
+    color: rgb(34, 134, 34);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .bottompart-buttons button:hover {
+    background-color: #eee;
+    transform: translateY(-2px);
+  }
+  
+  .end {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5% 0px;
+    background-color: rgb(34, 134, 34);
+    color: white;
+    gap: 10px;
+}
+
+.end-left {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.end-left img {
+    width: 100%;
+    max-width: 1600px;
+    border-radius: 10px;
+    height: 500px;
+}
+
+.end-right {
+    flex: 1 1 400px;
+    max-width: 600px;
+}
+
+.end-right h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.end-right p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.outline-btn {
+    padding: 12px 24px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.outline-btn:hover {
+    background: white;
+    color: rgb(34, 134, 34);
+}
+
+  
+
+
+
+

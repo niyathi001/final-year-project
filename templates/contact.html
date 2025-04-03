@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      {% if category == 'contact' %}
+        <p style="color: green;">{{ message }}</p>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<form method="post">
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+        
+        <label>Subject:</label><br>
+        <input type="text" name="subject" required><br><br>
+        
+        <label>Message:</label><br>
+        <textarea name="message" required></textarea><br><br>
+        
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

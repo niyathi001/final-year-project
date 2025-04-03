@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Plant Service - Nature’s Basket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            font-family: 'Ubuntu', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            height: 65px;
+            background-color: rgb(34, 134, 34);
+            color: antiquewhite;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            padding: 0 12px;
+        }
+
+        .brand img {
+            width: 70px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-left: -30px;
+            margin-top: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .buttons a {
+            padding: 8px 15px;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        #back-btn {
+            background: #fff;
+            color: #000;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 3px;
+            font-size: 16px;
+            border: 2px solid transparent;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        #back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2a7a2e;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        select, input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        button[type="submit"] {
+            background-color: #228b22;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1c741c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li class="brand">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nature's Basket">
+                    Nature's Basket
+                </li>
+            </ul>
+            <div class="buttons">
+                <a href="{{ url_for('order_history') }}"><button id="back-btn">GO BACK</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <h2>🛠️ Request a Service for {{ plant_name }}</h2>
+        <form method="POST">
+            <label for="service_type">Type of Service:</label>
+            <select name="service_type" required>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Repotting">Repotting</option>
+                <option value="Pest Control">Pest Control</option>
+                <option value="General Care">General Care</option>
+            </select>
+
+            <label for="preferred_date">Preferred Date:</label>
+            <input type="date" name="preferred_date" required>
+
+            <label for="notes">Notes (optional):</label>
+            <textarea name="notes" rows="4" placeholder="Any special instructions?"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+</body>
+</html>

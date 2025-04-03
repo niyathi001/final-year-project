@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmation - Nature’s Basket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #f0fdf4;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            font-family: 'Ubuntu', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            height: 65px;
+            background-color: rgb(34, 134, 34);
+            color: antiquewhite;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            padding: 0 12px;
+        }
+
+        .brand img {
+            width: 70px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-left: -30px;
+            margin-top: 15px;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            margin: 50px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #2a7a2e;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background-color: #228b22;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #1c741c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li class="brand">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nature's Basket">
+                    Nature's Basket
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>🎉 Order Confirmed!</h2>
+        <p>Thank you for purchasing <strong>Plant ID #{{ plant_id }}</strong>.</p>
+        <p>Total Paid: <strong>₹{{ price }}</strong></p>
+        <a href="{{ url_for('view_plants') }}">← GO BACK</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature's Basket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="brand">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nature's Basket">
+                    Nature's Basket
+                </li>
+                <li><a href="{{ url_for('about') }}"><button class="nav-btn">ABOUT</button></a></li>
+            </ul>
+            <div class="buttons">
+                <a href="{{ url_for('login_page') }}"><button id="loginBtn">LOGIN</button></a>
+                <a href="{{ url_for('register_page') }}"><button id="register-btn">REGISTER</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="top">
+        <div class="top-text">
+            <h1>Grow Your Garden with <br> Nature’s Basket</h1>
+            <p>Transform your space with our diverse plants, innovative furniture, and expert care services.</p>
+            <a href="{{ url_for('login_page', next='blog') }}"><button class="join-btn">JOIN COMMUNITY</button></a>
+        </div>
+        <div class="top-image">
+            <img src="{{ url_for('static', filename='images/plants.jpg') }}" alt="Garden with plants">
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Key Features of Nature’s Basket</h2>
+        <p>At Nature's Basket, we stand out through our wide selection of plants, stylish furniture, and dedicated caretakers committed to your gardening success.</p>
+        <div class="feature-container">
+            <button class="feature-card">
+                <div class="icon"><i class="fas fa-seedling"></i></div>
+                <h3>Diverse Plant Selection</h3>
+                <p>Discover a variety of plants to elevate your space. Choose from indoor, outdoor, and exotic options tailored to your needs.</p>
+            </button>
+        
+            <button class="feature-card">
+                <div class="icon"><i class="fas fa-couch"></i></div>
+                <h3>Stylish Plant Furniture</h3>
+                <p>Explore our unique, eco-friendly furniture designed to enhance your plant display while complementing your home decor.</p>
+            </button>
+        
+            <button class="feature-card">
+                <div class="icon"><i class="fas fa-leaf"></i></div>
+                <h3>Expert Plant Care</h3>
+                <p>Our professional caretakers ensure your plants thrive, offering personalized care and maintenance services to suit your lifestyle.</p>
+            </button>
+        </div>
+    </section>
+
+    <div class="middle-image">
+        <img src="{{ url_for('static', filename='images/bench.png') }}" alt="Garden with bench">
+    </div>
+
+    <section class="bottompart">
+        <h2>Explore Our Variety Of Beautiful Plants</h2>
+        <p>Discover the perfect plants for your home and garden, all in one place.</p>
+        <div class="bottompart-buttons">
+            <button>Care Tips</button>
+            <button>Plant Furniture</button>
+            <button>Lifestyle</button>
+            <button>Expert Guidance</button>
+            <button>Blog</button>
+          </div>
+      
+    </section>
+
+    <section class="end">
+        <div class="end-left">
+            <img src="{{ url_for('static', filename='images/youngman.png') }}" alt="Garden with bench">
+        </div>
+    
+        <div class="end-right">
+          <h1>Join Our Green Family<br>Today!</h1>
+          <p>Explore our rich array of plants, furniture, and caretaker services to nurture your gardening passion.</p>
+          <div class="end-buttons">
+            <a href="{{ url_for('register_page') }}"><button class="outline-btn">Connect With Us</button></a>
+            </div>
+        </div>
+      </section>
+    
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo-title">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="footer-logo">
+                    <h3>Nature’s Basket</h3>
+                </div>
+                <p>Your green companion for a better lifestyle.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+                    <li><a href="{{ url_for('login_page') }}">SHOP</button></a></li>
+                    <li><a href="{{ url_for('contact_page') }}">CONTACT</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: naturesbasket031@gmail.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    
+        <!-- New wrapper to apply full-width border -->
+        <div class="footer-divider"></div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 Nature's Basket. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> 
+</body>
+</html>
